@@ -1,0 +1,2 @@
+-r requirements-eda.txt
+pyspark==3.5.7
