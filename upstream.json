@@ -1,0 +1,11 @@
+{
+  "repository": "https://github.com/MinhGioChai/Draft-for-BigData",
+  "commit": "4b74d035ab6792e6337b5236d42992c970b15081",
+  "entrypoint": "src/preprocess.py",
+  "dataset": "IBM AML HI-Small",
+  "required_outputs": [
+    "vertices.parquet",
+    "edges.parquet",
+    "preprocess_summary.json"
+  ]
+}

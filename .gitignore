@@ -1,9 +1,10 @@
 .venv/
+.tools/
 __pycache__/
 .ipynb_checkpoints/
-data/raw/*.csv
-data/raw/*.part
-.tools/
-data/benchmark/
-reports/architecture/runs/
-reports/architecture/smoke/
+data/
+reports/
+checkpoints/
+spark-warehouse/
+metastore_db/
+derby.log

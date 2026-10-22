@@ -48,14 +48,14 @@ def configure_kernel(heap="2g"):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--heap", default="2g", help="Maximum Scala kernel JVM heap")
+    parser.add_argument("--heap", default="6g", help="Maximum Scala kernel JVM heap")
     args = parser.parse_args()
     if Path(sys.prefix).resolve() != (ROOT / ".venv").resolve():
         raise RuntimeError("Run with .venv/bin/python scripts/setup_scala_kernel.py")
     import pyspark
 
     if pyspark.__version__ != "3.5.7":
-        raise RuntimeError("Install requirements-benchmark.txt first (Spark 3.5.7).")
+        raise RuntimeError("Install requirements.txt first (Spark 3.5.7).")
     java_home = Path(os.environ.get("JAVA_HOME", TOOLS / "java"))
     if not (java_home / "bin/java").is_file():
         raise RuntimeError("Install Java 17 and set JAVA_HOME.")
