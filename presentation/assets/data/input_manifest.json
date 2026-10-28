@@ -1,0 +1,18 @@
+{
+  "source_dir" : "/home/tuanta/BigData/graphX/data/processed",
+  "id_encoding" : "1-based index of sorted upstream IDs; source_id preserved",
+  "vertices_path" : "/home/tuanta/BigData/graphX/data/benchmark/preprocessed_1793157792545/vertices",
+  "sha256" : {
+    "edges.parquet" : "4fa5d64ddcd198aba9b64b26337885d49cca5f07f7ce23f63aca53fa33806c20",
+    "preprocess_summary.json" : "14e80d629646ddae1e541a7597ef6dc9fc1c5b5a94ea93fc50233f4eea44274a",
+    "vertices.parquet" : "39c62ac8e2b58eb4d2aaafcacd3dbb6da37acdc6d48cfefbf42e9452a65346cf"
+  },
+  "upstream_commit" : "4b74d035ab6792e6337b5236d42992c970b15081",
+  "edge_view" : "transactions",
+  "edges_path" : "/home/tuanta/BigData/graphX/data/benchmark/preprocessed_1793157792545/edges",
+  "amount_column" : "upstream amount (USD)",
+  "edges" : 4487124,
+  "sampling" : "none",
+  "upstream_repository" : "https://github.com/MinhGioChai/Draft-for-BigData",
+  "vertices" : 422734
+}

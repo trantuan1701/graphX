@@ -1,0 +1,18 @@
+{
+  "warmups" : 1,
+  "heap_max_bytes" : 6442450944,
+  "seed" : 42,
+  "master" : "local[2]",
+  "scope" : "local JVM; no inter-machine network measurement",
+  "partition_counts" : [ 4, 16 ],
+  "input_dir" : "/home/tuanta/BigData/graphX/data/benchmark/preprocessed_1793157792545",
+  "spark" : "3.5.7",
+  "repeats" : 3,
+  "storage" : "StorageLevel(disk, memory, deserialized, 1 replicas)",
+  "strategies" : [ "RandomVertexCut", "EdgePartition1D", "EdgePartition2D" ],
+  "edges" : 4487124,
+  "iterations" : 5,
+  "damping" : 0.85,
+  "active_vertices" : 422734,
+  "vertices" : 422734
+}

@@ -1,0 +1,23 @@
+spark=3.5.7
+scala=2.12.18
+java=17.0.20.1
+master=local[2]
+vertices=422734
+edges=4487124
+partitions=4
+iterations=5
+damping=0.85
+seed=42
+repeats=3
+warmups=1
+heap_max_bytes=6442450944
+input=upstream transaction edges
+no sampling or pre-aggregation
+graphframes=0.10.0
+os=Linux amd64
+available_processors=16
+memory_sampling_ms=100
+memory_scope=shared local JVM, sampled peak, no forced GC
+checkpoint_retention=deleted after each run outside timing
+execution=03_preprocessed_graph_benchmark.ipynb
+
