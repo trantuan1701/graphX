@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Graph & Big Data - Introduction</title>
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="styles.css">
+<script defer src="script.js"></script>
+</head>
+<body>
+<main id="deck" aria-label="Giới thiệu Graph và Big Data, 5 slides">
+<section class="slide active" id="slide-1" aria-label="Slide 1: Transactions & Relationships">
+<header><p class="eyebrow">00 / INTRODUCTION</p><h1>Transactions & Relationships</h1><p class="lead">Phân tích từng giao dịch cho biết điều gì?</p></header>
+<div class="slide-content"><div class="transaction-layout"><div><h3>Dữ liệu giao dịch</h3><table><thead><tr><th>Gửi</th><th>Nhận</th><th>Số tiền (đồng)</th><th>Thời gian</th></tr></thead><tbody><tr><td>A</td><td>B</td><td>10 triệu</td><td>09:00</td></tr><tr><td>B</td><td>C</td><td>9,8 triệu</td><td>09:02</td></tr><tr><td>C</td><td>D</td><td>9,6 triệu</td><td>09:04</td></tr></tbody></table><p class="small-line">Ví dụ minh họa, không phải dữ liệu thực tế.</p></div><div class="attribute-analysis"><h3>Phân tích thuộc tính</h3><p>Thống kê số tiền và thời điểm</p><p>Tìm giao dịch bất thường</p><p>Tìm hiểu hành vi tài khoản</p></div></div><p class="prompt">Liệu xem từng giao dịch riêng lẻ đã đủ?</p></div>
+<footer><span>Graph & Big Data</span><span>01 / 05</span></footer>
+<aside class="speaker-notes">Khi nói đến phân tích dữ liệu, thông thường chúng ta nghĩ đến thông tin hay thuộc tính của từng đối tượng. Trong tài chính, đó là tài khoản gửi, tài khoản nhận, số tiền và thời gian. Từ đây, ta thống kê, tìm giao dịch bất thường hoặc phân tích hành vi. Nhưng liệu xem từng giao dịch riêng lẻ đã đủ? Các số tiền và thời gian trên slide chỉ là ví dụ minh họa cho câu chuyện.</aside>
+</section>
+
+<section class="slide" id="slide-2" aria-label="Slide 2: Graph & Connected Data" inert>
+<header><p class="eyebrow">00 / INTRODUCTION</p><h1>Graph & Connected Data</h1><p class="lead">Mối quan hệ giúp chúng ta nhìn thấy cấu trúc của dữ liệu.</p></header>
+<div class="slide-content"><div class="relationship"><p class="graph-key"><span><b>Đỉnh</b> là tài khoản</span><span><b>Cạnh có hướng</b> là giao dịch chuyển tiền</span></p><div class="chain" role="img" aria-label="Chuỗi giao dịch từ tài khoản A tới B, B tới C và C tới D"><span>A</span><i>⟶</i><span>B</span><i>⟶</i><span>C</span><i>⟶</i><span>D</span></div><p class="chain-caption">Một giao dịch có thể bình thường.<br>Chuỗi liên kết có thể gợi ra mẫu cần kiểm tra.</p></div><div class="algorithm-row"><div><h3>Đường đi ngắn nhất</h3><p>Kết nối qua những đỉnh nào?</p></div><div><h3>Phát hiện cộng đồng</h3><p>Những đỉnh nào liên kết chặt?</p></div><div><h3>Độ quan trọng của đỉnh</h3><p>Đỉnh nào nổi bật trong mạng?</p></div></div><p class="small-line">Ứng dụng khác: gợi ý sản phẩm, mạng giao thông, mạng lưới thông tin.</p></div>
+<footer><span>Graph & Big Data</span><span>02 / 05</span></footer>
+<aside class="speaker-notes">Giá trị của dữ liệu còn nằm ở quan hệ giữa các đối tượng. Một giao dịch A sang B có thể hoàn toàn bình thường. Khi nối thêm B sang C và C sang D, chúng ta thấy chuỗi giao dịch mà việc xem từng dòng khó thể hiện. Một chuỗi tự nó không chứng minh hành vi bất thường hay rửa tiền, cần thêm ngữ cảnh để đánh giá. Graph biểu diễn đối tượng bằng đỉnh và quan hệ bằng cạnh. Những thuật toán như đường đi ngắn nhất, phát hiện cộng đồng và xác định đỉnh quan trọng cho phép khai thác cấu trúc liên kết. Điều này cũng hữu ích cho gợi ý sản phẩm, giao thông và thông tin.</aside>
+</section>
+
+<section class="slide" id="slide-3" aria-label="Slide 3: Graph at Big Data Scale" inert>
+<header><p class="eyebrow">00 / INTRODUCTION</p><h1>Graph at Big Data Scale</h1><p class="lead">Điều gì xảy ra khi đồ thị ngày càng lớn?</p></header>
+<div class="slide-content"><div class="scale-comparison"><div><p class="scale-label">QUY MÔ NHỎ</p><strong>Vài nghìn</strong><p>tài khoản, số giao dịch nhỏ</p><p class="muted">Có thể xử lý trên một máy.</p></div><div><p class="scale-label">QUY MÔ LỚN</p><strong>Hàng triệu</strong><p>giao dịch mỗi ngày</p><p class="muted">Dữ liệu liên tục, liên kết phức tạp.</p></div></div><div class="iteration"><h3>PageRank cần nhiều vòng tính toán</h3><p>Mỗi vòng cập nhật mức độ quan trọng của đỉnh dựa trên các liên kết.</p><div class="iteration-line"><span>Rank hiện tại</span><b>⟶</b><span>Truyền đóng góp theo cạnh</span><b>⟶</b><span>Rank mới</span></div><p class="small-line">Lặp lại trên toàn đồ thị làm tăng chi phí tính toán và trao đổi dữ liệu.</p></div><p class="prompt compact-prompt">Một máy có thể gặp giới hạn bộ nhớ và thời gian xử lý.</p></div>
+<footer><span>Graph & Big Data</span><span>03 / 05</span></footer>
+<aside class="speaker-notes">Graph giải quyết việc biểu diễn và phân tích quan hệ, nhưng quy mô tạo ra thách thức mới. Với vài trăm hoặc vài nghìn tài khoản và ít giao dịch, ta có thể xử lý trên một máy. Các hệ thống tài chính lớn có thể ghi nhận hàng triệu giao dịch mỗi ngày, dữ liệu liên tục và đa dạng. Đây là mô tả tình huống theo script, không phải thống kê của bộ dữ liệu benchmark trong phần sau. PageRank cập nhật mức độ quan trọng của đỉnh dựa trên liên kết và cần nhiều vòng tính toán. Khi số đỉnh và cạnh lớn, việc quét cạnh, lưu trạng thái và cập nhật lặp đòi hỏi nhiều tài nguyên. Câu hỏi chuyển thành làm thế nào để xử lý graph hiệu quả trên dữ liệu lớn.</aside>
+</section>
+
+<section class="slide" id="slide-4" aria-label="Slide 4: Distributed Graph Processing" inert>
+<header><p class="eyebrow">00 / INTRODUCTION</p><h1>Distributed Graph Processing</h1><p class="lead">Phân chia đồ thị và khối lượng tính toán trên nhiều máy.</p></header>
+<div class="slide-content"><div class="distributed-explanation"><div class="distributed-main"><h3>Xử lý phân tán</h3><p>Mỗi máy giữ và xử lý một phần dữ liệu.</p><p>Các phần trao đổi thông tin theo liên kết và phối hợp qua các vòng tính toán.</p></div><div class="distributed-limits"><h3>Khả năng mở rộng</h3><p>Chia sẻ bộ nhớ và tài nguyên tính toán giữa nhiều máy.</p><p class="muted">Hiệu quả còn phụ thuộc cách phân chia dữ liệu và chi phí giao tiếp.</p></div></div><div class="spark-tools"><p class="scale-label">TRONG HỆ SINH THÁI APACHE SPARK</p><div class="tool-names"><strong class="gx-text">GraphX</strong><span>và</span><strong class="gf-text">GraphFrames</strong></div><p>Biểu diễn và xử lý đồ thị theo hướng phân tán.</p></div></div>
+<footer><span>Graph & Big Data</span><span>04 / 05</span></footer>
+<aside class="speaker-notes">Vấn đề không còn chỉ là phân tích đồ thị như thế nào, mà là thực hiện hiệu quả trên quy mô lớn. Khi một máy gặp hạn chế bộ nhớ, thời gian hoặc khả năng mở rộng, hệ thống phân tán cho phép phân chia dữ liệu và khối lượng tính toán trên nhiều máy. Các phần đồ thị vẫn liên hệ với nhau nên phải trao đổi thông tin. Phân tán không bảo đảm thuật toán luôn nhanh hơn vì có chi phí giao tiếp và phối hợp. Trong hệ sinh thái Apache Spark, GraphX và GraphFrames hỗ trợ biểu diễn và xử lý graph theo hướng phân tán. Phần giới thiệu chỉ đặt vấn đề, các chi tiết sẽ xuất hiện ở phần sau.</aside>
+</section>
+
+<section class="slide" id="slide-5" aria-label="Slide 5: Outline" inert>
+<header><p class="eyebrow">00 / INTRODUCTION</p><h1>Outline</h1></header>
+<div class="slide-content"><div class="outline"><h2><span>01</span>Lý thuyết đồ thị</h2><h2><span>02</span>Xử lý đồ thị phân tán trong Big Data</h2></div></div>
+<footer><span>Graph & Big Data</span><span>05 / 05</span></footer>
+<aside class="speaker-notes">Sau phần giới thiệu, chúng ta sẽ tìm hiểu hai phần. Thứ nhất là lý thuyết đồ thị để hiểu cách biểu diễn quan hệ và những thuật toán khai thác chúng. Thứ hai là xử lý đồ thị trong môi trường Big Data và dữ liệu phân tán.</aside>
+</section>
+</main>
+<nav class="controls" aria-label="Điều khiển slide"><button id="prev" aria-label="Slide trước">←</button><span id="counter" aria-live="polite">1 / 5</span><button id="next" aria-label="Slide sau">→</button><span class="control-divider"></span><button id="notes" title="N: ghi chú" aria-pressed="false">Ghi chú <kbd>N</kbd></button><button id="fullscreen" title="F: fullscreen">Toàn màn hình <kbd>F</kbd></button><button id="print" title="P: in hoặc lưu PDF">In / PDF <kbd>P</kbd></button></nav>
+<div class="progress" aria-hidden="true"><i></i></div>
+</body>
+</html>

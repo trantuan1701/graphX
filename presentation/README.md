@@ -62,3 +62,8 @@ Tài liệu đối chiếu:
 
 
 Bản PDF đã xuất sẵn: [slides.pdf](slides.pdf).
+
+## Phần giới thiệu
+
+Bộ [giới thiệu Graph và Big Data](introduction/index.html) gồm 4 slide dẫn nhập và slide 5 nêu hai phần tiếp theo.
+Xem [PDF giới thiệu](introduction/slides.pdf) hoặc [hướng dẫn chỉnh sửa](introduction/README.md).
